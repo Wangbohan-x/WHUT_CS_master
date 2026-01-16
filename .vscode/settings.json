@@ -1,0 +1,51 @@
+{
+  // LaTeX Workshop 配置
+"latex-workshop.latex.tools": [
+    // 配置XeLaTeX编译工具（支持中文ctex）
+    {
+        "name": "xelatex",
+        "command": "xelatex",
+        "args": [
+            "-synctex=1",
+            "-interaction=nonstopmode",
+            "-file-line-error",
+            "%DOC%"
+        ]
+    },
+    // 配置biber参考文献处理工具
+    {
+        "name": "biber",
+        "command": "biber",
+        "args": [
+            "%DOCFILE%"
+        ]
+    }
+],
+// 配置编译工具链（先XeLaTeX，再biber，再两次XeLaTeX完善排版）
+"latex-workshop.latex.recipes": [
+    {
+        "name": "XeLaTeX -> Biber -> XeLaTeX*2",
+        "tools": [
+            "xelatex",
+            "biber",
+            "xelatex",
+            "xelatex"
+        ]
+    }
+],
+// 额外优化（可选，提升体验）
+"latex-workshop.view.pdf.viewer": "tab", // 在VS Code标签页预览PDF
+"latex-workshop.latex.clean.fileTypes": [ // 编译后清理冗余辅助文件
+    "*.aux",
+    "*.bbl",
+    "*.blg",
+    "*.run.xml",
+    "*.out",
+    "*.synctex.gz"
+],
+"latex-workshop.compile.autoBuild": false,
+"C_Cpp.errorSquiggles": "enabled", // 关闭自动编译，手动控制更稳妥（避免重复报错）
+
+// 配置 LaTeX 格式化工具（消除 formatter 提示）
+"latex-workshop.formatting.latex": "latexindent"
+}

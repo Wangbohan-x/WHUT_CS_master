@@ -1,0 +1,56 @@
+\chapter{这是第二章}
+
+\section{伪代码}
+如需阐述算法看用伪代码形式展示，如算法 \ref{al2-2} 所示。
+
+\begin{algorithm}[H]
+    \SetAlgoNoLine % 不要算法中的竖线
+    \SetKwInOut{Input}{\textbf{输入}}\SetKwInOut{Output}{\textbf{输出}} % 替换关键词
+    \Input{
+        \\
+        训练样本$x$（对应输入层输出$a^0$），标签$y$；\\
+        网络权重$\{W^l\}$，网络偏置$\{b^l\}$；\\
+        激活函数$\sigma$，神经网络总层数$L$；\\
+    }
+    \Output{
+        \\
+        各层的$z^l$和$a^l$（用于后续反向传播）；\\
+        损失值$\text{Loss}$（可选）；\\
+    }
+    \BlankLine
+    初始化输入层输出$a^0 = x$；\\ % 分号 \; 可保留，此处贴合模板用\\
+    遍历隐藏层和输出层（$l$从1到$L$）；\\
+    \For{$l = 1$ \textbf{to} $L$}{
+        计算第$l$层加权输入$z^l = W^{(l-1)} \cdot a^{(l-1)} + b^{(l-1)}$（$\cdot$表示矩阵乘法）；\\
+        计算第$l$层激活输出$a^l = \sigma(z^l)$（$\sigma$为Sigmoid/ReLU/Softmax等）；\\
+    }
+    计算损失函数值$\text{Loss} = \mathcal{L}(a^L, y)$；\\
+    返回各层$z^l$、$a^l$和损失值$\text{Loss}$；\\
+    \caption{前向传播确定网络各层输出\label{al:forward_prop}}
+\end{algorithm}
+
+\section{实用工具}
+VSCcode + LatexWorkshop插件，强大的编辑和编译功能。
+\begin{figure}[H]
+\centering
+\includegraphics[scale=0.55]{figure/chap2/2-1.png}
+\caption{LatexWorkshop插件}
+\label{fig2-1}
+\end{figure}
+Google Scholar，强大的文献搜索引擎。可直接导出.bib格式文献。
+\begin{figure}[H]
+\centering
+\includegraphics[scale=0.3]{figure/chap2/2-2.png}
+\caption{Google Scholar}
+\label{fig2-2}
+\end{figure}
+
+NotebookLLM，多模态大模型，。支持文档问答、代码生成等功能。
+\begin{figure}[H]
+\centering
+\includegraphics[scale=0.3]{figure/chap2/2-3.png}
+\caption{NotebookLLM}
+\label{fig2-3}
+\end{figure}
+\section{参考文献引用}
+上角标引用参考文献像这样\cite{liu2025cage}，方括号引用，文献\parencite{liu2025cage}。
