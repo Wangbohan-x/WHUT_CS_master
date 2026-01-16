@@ -1,0 +1,157 @@
+% $ biblatex auxiliary file $
+% $ biblatex bbl format version 3.3 $
+% Do not modify the above lines!
+%
+% This is an auxiliary file used by the 'biblatex' package.
+% This file may safely be deleted. It will be recreated by
+% biber as required.
+%
+\begingroup
+\makeatletter
+\@ifundefined{ver@biblatex.sty}
+  {\@latex@error
+     {Missing 'biblatex' package}
+     {The bibliography requires the 'biblatex' package.}
+      \aftergroup\endinput}
+  {}
+\endgroup
+
+
+\refsection{0}
+  \datalist[entry]{none/global//global/global/global}
+    \entry{liu2025cage}{inproceedings}{}{}
+      \name{author}{9}{}{%
+        {{hash=cc06e66a64bb532ebb8da1a6ccdcd65f}{%
+           family={Liu},
+           familyi={L\bibinitperiod},
+           given={Yiyi},
+           giveni={Y\bibinitperiod}}}%
+        {{hash=34c9b10e9204b9f74f470b237643a6e8}{%
+           family={Liu},
+           familyi={L\bibinitperiod},
+           given={Chunyang},
+           giveni={C\bibinitperiod}}}%
+        {{hash=4104158be7fb0a00c5496df079409b07}{%
+           family={Wang},
+           familyi={W\bibinitperiod},
+           given={Bohan},
+           giveni={B\bibinitperiod}}}%
+        {{hash=d8a2c3cce57b7b3ce33b3f419d0833b4}{%
+           family={Jiao},
+           familyi={J\bibinitperiod},
+           given={Weiqin},
+           giveni={W\bibinitperiod}}}%
+        {{hash=a425ee0777d793980f017238ccf18789}{%
+           family={Wu},
+           familyi={W\bibinitperiod},
+           given={Bojian},
+           giveni={B\bibinitperiod}}}%
+        {{hash=0116147f232c062183f8fc84aa1d78c7}{%
+           family={Fan},
+           familyi={F\bibinitperiod},
+           given={Lubin},
+           giveni={L\bibinitperiod}}}%
+        {{hash=020623a227e58ca7ebf11166d6e34559}{%
+           family={Chen},
+           familyi={C\bibinitperiod},
+           given={Yuwei},
+           giveni={Y\bibinitperiod}}}%
+        {{hash=a8e38082679856caaa69875dca3e7292}{%
+           family={Li},
+           familyi={L\bibinitperiod},
+           given={Fashuai},
+           giveni={F\bibinitperiod}}}%
+        {{hash=931732c8e78f62af80f3f9b6f1426acb}{%
+           family={Xiong},
+           familyi={X\bibinitperiod},
+           given={Biao},
+           giveni={B\bibinitperiod}}}%
+      }
+      \name{namea}{9}{}{%
+        {{hash=cc06e66a64bb532ebb8da1a6ccdcd65f}{%
+           family={Liu},
+           familyi={L\bibinitperiod},
+           given={Yiyi},
+           giveni={Y\bibinitperiod}}}%
+        {{hash=34c9b10e9204b9f74f470b237643a6e8}{%
+           family={Liu},
+           familyi={L\bibinitperiod},
+           given={Chunyang},
+           giveni={C\bibinitperiod}}}%
+        {{hash=4104158be7fb0a00c5496df079409b07}{%
+           family={Wang},
+           familyi={W\bibinitperiod},
+           given={Bohan},
+           giveni={B\bibinitperiod}}}%
+        {{hash=d8a2c3cce57b7b3ce33b3f419d0833b4}{%
+           family={Jiao},
+           familyi={J\bibinitperiod},
+           given={Weiqin},
+           giveni={W\bibinitperiod}}}%
+        {{hash=a425ee0777d793980f017238ccf18789}{%
+           family={Wu},
+           familyi={W\bibinitperiod},
+           given={Bojian},
+           giveni={B\bibinitperiod}}}%
+        {{hash=0116147f232c062183f8fc84aa1d78c7}{%
+           family={Fan},
+           familyi={F\bibinitperiod},
+           given={Lubin},
+           giveni={L\bibinitperiod}}}%
+        {{hash=020623a227e58ca7ebf11166d6e34559}{%
+           family={Chen},
+           familyi={C\bibinitperiod},
+           given={Yuwei},
+           giveni={Y\bibinitperiod}}}%
+        {{hash=a8e38082679856caaa69875dca3e7292}{%
+           family={Li},
+           familyi={L\bibinitperiod},
+           given={Fashuai},
+           giveni={F\bibinitperiod}}}%
+        {{hash=931732c8e78f62af80f3f9b6f1426acb}{%
+           family={Xiong},
+           familyi={X\bibinitperiod},
+           given={Biao},
+           giveni={B\bibinitperiod}}}%
+      }
+      \list{language}{1}{%
+        {english}%
+      }
+      \strng{namehash}{8f3d5cadbec6dbf5d74bb30b743ea365}
+      \strng{fullhash}{5b9b3403681850c7d6ab7233287570e7}
+      \strng{fullhashraw}{5b9b3403681850c7d6ab7233287570e7}
+      \strng{bibnamehash}{4747e761a8340cce4c020e1f5a3cfa02}
+      \strng{authorbibnamehash}{4747e761a8340cce4c020e1f5a3cfa02}
+      \strng{authornamehash}{8f3d5cadbec6dbf5d74bb30b743ea365}
+      \strng{authorfullhash}{5b9b3403681850c7d6ab7233287570e7}
+      \strng{authorfullhashraw}{5b9b3403681850c7d6ab7233287570e7}
+      \strng{nameabibnamehash}{4747e761a8340cce4c020e1f5a3cfa02}
+      \strng{nameanamehash}{8f3d5cadbec6dbf5d74bb30b743ea365}
+      \strng{nameafullhash}{5b9b3403681850c7d6ab7233287570e7}
+      \strng{nameafullhashraw}{5b9b3403681850c7d6ab7233287570e7}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{The Thirty-ninth Annual Conference on Neural Information Processing Systems}
+      \field{langid}{english}
+      \field{languageid}{english}
+      \field{lansortorder}{4}
+      \field{title}{{CAGE}: Continuity-Aware ed{GE} Network Unlocks Robust Floorplan Reconstruction}
+      \field{usera}{C}
+      \field{userd}{english}
+      \field{userf}{english}
+      \field{year}{2025}
+      \field{dateera}{ce}
+      \verb{urlraw}
+      \verb https://openreview.net/forum?id=ShJ80Yu12r
+      \endverb
+      \verb{url}
+      \verb https://openreview.net/forum?id=ShJ80Yu12r
+      \endverb
+      \keyw{liu2025cage}
+    \endentry
+  \enddatalist
+\endrefsection
+\endinput
+
