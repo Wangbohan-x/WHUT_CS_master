@@ -51,13 +51,11 @@
 % \setmainfont{Times New Roman}          % 西文正文：Times
 
 \begin{document}
-
-\include{chap/Cover.tex}
+\let\cleardoublepage\clearpage %取消每章偶数页空白
+\input{chap/Cover.tex}
 
 
 \frontmatter %开始前面部分，从此页码为罗马数字
-\let\cleardoublepage\clearpage %取消每章偶数页空白
-
 
 \include{chap/Declaration.tex}
 

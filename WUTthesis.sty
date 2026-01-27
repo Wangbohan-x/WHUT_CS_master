@@ -33,6 +33,12 @@
 \newcommand{\STZhongsong}{\CJKfamily{STZhongsong}}
 
 
+
+\setCJKfamilyfont{fsbold}[AutoFakeBold=1.5]{FangSong}
+% 定义一个命令方便调用加粗仿宋
+\newcommand{\fsbold}{\CJKfamily{fsbold}}
+
+
 \def\wutChinesetype{}
 \def\wutEnglishtype{}
 \def\wutChinesedegree{}
@@ -123,8 +129,9 @@
 \def\wutcommitteechairman{}
 \newcommand{\WUTcommitteechairman}[1]{\def\wutcommitteechairman{#1}}
 \def\wutfirstreviewer{}
-\def\wutsecondreviewer{}
-\newcommand{\WUTreviewers}[2]{\def\wutfirstreviewer{#1} \def\wutsecondreviewer{#2}}
+\def\wutreviewercomfirst{}
+\def\wutreviewercomsecond{}
+\newcommand{\WUTreviewers}[3]{\def\wutfirstreviewer{#1} \def\wutreviewercomfirst{#2} \def\wutreviewercomsecond{#3}}
 \def\wutdegreeorganization{}
 \newcommand{\WUTdegreeorganization}[1]{\def\wutdegreeorganization{#1}} %% 学位授予单位
 \def\wutdateofthesiscompletion{}
@@ -172,13 +179,15 @@
 
 
 
-\newcommand{\WUTmakefirstcover}{
+\newcommand{\WUTmakefirstcover}
+{
     \begin{titlepage}
         \begin{adjustwidth}{-3mm}{3mm}
             \begin{center}
                 ~ \\
                 \resizebox{0.6\hsize}{!}{\includegraphics{WUT.jpg}} \\
-                {\zihao{4}\songti (申请\wutChinesedegree 学位论文)}
+                ~ \\
+                {\zihao{4}\songti (申请\wutChinesetype\wutChinesedegree 学位论文)}
                 \vspace{3cm}
                 \begin{spacing}{1.2}
                     \parbox[t]{11cm}{\centering \zihao{1}\heiti \wutChinesetitle}
@@ -186,49 +195,50 @@
             \end{center}
             \vspace{5cm}
             \begin{center}
-                \begin{minipage}[c][4ex]{7.8cm}
+                \begin{minipage}[c][4ex]{9cm}
                     \begin{spacing}{1.35}
                         \zihao{3}\fangsong
-                        培养单位：\wutinstitute \\
-                        学科专业：\wutmajorChinesename \\
-                        研\hspace{0.3cm}究\hspace{0.3cm}生：\wutauthorChinesename \\
-                        指导教师：\wutsupervisorChinesename{} \wutsupervisortitle
+                        \textbf{\fsbold 培\hspace{0.15cm}养\hspace{0.15cm}单\hspace{0.15cm}位}：\wutinstitute \\
+                        \textbf{\fsbold 学\hspace{0.15cm}科\hspace{0.15cm}专\hspace{0.15cm}业}：\wutmajorChinesename \\
+                        \textbf{\fsbold 论\hspace{0.15cm}文\hspace{0.15cm}作\hspace{0.15cm}者}：\wutauthorChinesename \\
+                        \textbf{\fsbold 指\hspace{0.15cm}导\hspace{0.15cm}教\hspace{0.15cm}师}：\wutsupervisorChinesename{} \wutsupervisortitle
                     \end{spacing}
                 \end{minipage}
             \end{center}
             \vspace{5.5cm}
             \begin{center}
-                {\zihao{3} \heiti \wutdateofthesiscompletion}
+                {\zihao{3} \fangsong \wutdateofthesiscompletion}
             \end{center}
         \end{adjustwidth}
-
-        \newpage\pagestyle{empty}
-        \begin{center}
-            \begin{spacing}{1.5}
-                \zihao{2}  \setmainfont{times.ttf}[Path=fonts/, AutoFakeBold=2.0, AutoFakeSlant=0.2]
-                \textbf{\wutEnglishtitlefirstline{} \wutEnglishtitlesecondline} \\
-                \zihao{3} ~ \\
-                Dissertation Submitted to \\
-                \textbf{Wuhan University of Technology} \\
-                in partial fulfillment of the requirements\\
-                for the degree of \\
-                Doctor of Philosophy\\
-                ~ \\
-                by\\
-                \wutauthorEnglishname \\
-                (\wutmajorEnglishname) \\
-                ~ \\
-                ~ \\
-                Dissertation Supervisor: \\
-                \wutsupervisorEnglishname \\
-                Affiliation: \\
-                \wutinstituteEnglish\\
-                ~ \\
-                ~ \\
-                \wutdateEnglish
-            \end{spacing}
-        \end{center}
     \end{titlepage}}
+
+        %\newpage\pagestyle{empty}
+        %\begin{center}
+            %\begin{spacing}{1.5}
+                %\zihao{2}  \setmainfont{times.ttf}[Path=fonts/, AutoFakeBold=2.0, AutoFakeSlant=0.2]
+                %\textbf{\wutEnglishtitlefirstline{} \wutEnglishtitlesecondline} \\
+                %\zihao{3} ~ \\
+                %Dissertation Submitted to \\
+                %\textbf{Wuhan University of Technology} \\
+                %in partial fulfillment of the requirements\\
+                %for the degree of \\
+                %Doctor of Philosophy\\
+                %~ \\
+                %by\\
+                %\wutauthorEnglishname \\
+                %(\wutmajorEnglishname) \\
+                %~ \\
+                %~ \\
+                %Dissertation Supervisor: \\
+                %\wutsupervisorEnglishname \\
+                %Affiliation: \\
+                %\wutinstituteEnglish\\
+                %~ \\
+                %~ \\
+                %\wutdateEnglish
+            %\end{spacing}
+        %\end{center}
+
 
 
 
@@ -245,13 +255,13 @@
                 {\kaishu\zihao{4} 密\hspace{9mm}级} \uline{\makebox[30mm]{\wutconfidentiality}} \\
                 {\kaishu\zihao{4} 学校代码} \uline{\makebox[30mm]{\wutuniversitycode}}
             \end{minipage} \\
-            \vspace{20mm}
+            \vspace{5mm}
             \begin{center}
                 \resizebox{0.6\hsize}{!}{\includegraphics{WUT.jpg}} \\
                 \vspace{5mm}
                 {\zihao{1}\STZhongsong \makebox[60mm][s]{学位论文}}
             \end{center}
-            \vspace{30mm}
+            \vspace{5mm}
             \begin{spacing}{1.5}
                 \zihao{4}\STZhongsong
                 \noindent 题目 \uline{\makebox[136mm]{\kaishu\wutChinesetitle}} \\
@@ -270,7 +280,7 @@
                         \uline{\makebox[136mm]{\wutEnglishtitlesecondline}}
                     \end{spacing}
                 \end{minipage} \\
-                \noindent 研究生姓名 \uline{\makebox[121mm]{\kaishu\wutauthorChinesename}} \\
+                \noindent 论文作者 \uline{\makebox[126mm]{\kaishu\wutauthorChinesename}} \\
                 \noindent\begin{minipage}[c][19mm][c]{25mm}
                     指导教师
                 \end{minipage}
@@ -289,13 +299,17 @@
                 \noindent 申请学位级别 \uline{\makebox[42mm]{\kaishu \wutChinesedegree}} 学科专业名称 \uline{\makebox[42mm]{\kaishu\wutmajorChinesename}} \\
                 \noindent 论文提交日期 \uline{\makebox[42mm]{\kaishu\wutdateofthesissubmission}} 论文答辩日期 \uline{\makebox[42mm]{\kaishu\wutdateofthesisdefense}} \\
                 \noindent 学位授予单位 \uline{\makebox[42mm]{\kaishu\wutdegreeorganization}} 学位授予日期 \uline{\makebox[42mm]{\kaishu\wutdateofdegreeaward}} \\
-                \noindent 答辩委员会主席 \uline{\makebox[42mm]{\kaishu\wutcommitteechairman}} 评阅人
-                \begin{minipage}[t][20mm][t]{52mm}
-                    \uline{\makebox[52mm]{\kaishu\wutfirstreviewer}} \\
-                    \uline{\makebox[52mm]{\kaishu\wutsecondreviewer}}
+                \noindent 答辩委员会主席 \uline{\makebox[42mm]{\kaishu\wutcommitteechairman}} 评阅人 \uline{\makebox[52mm]{\kaishu\wutfirstreviewer}} \\
+                \noindent 答辩委员会委员
+                \begin{minipage}[t][20mm][t]{111mm}
+                    \uline{\makebox[111mm]{\kaishu\wutreviewercomfirst}} \\
+                    \uline{\makebox[111mm]{\kaishu\wutreviewercomsecond}}
                 \end{minipage}
             \end{spacing}
-            {\hspace{50mm}\zihao{4}\STZhongsong\wutdateofthesiscompletion}
+            \vspace{20mm}
+            \begin{center}
+                {\zihao{3} \STZhongsong \wutdateofthesiscompletion}
+            \end{center}
         \end{center}
     \end{titlepage}}
 
