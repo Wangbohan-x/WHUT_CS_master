@@ -113,7 +113,9 @@
 
 \def\wutauthorChinesename{}
 \def\wutauthorEnglishname{}
+\def\wutauthorstudentid{}
 \newcommand{\WUTauthor}[2]{\def\wutauthorChinesename{#1} \def\wutauthorEnglishname{#2}}
+\newcommand{\WUTauthorstudentid}[1]{\def\wutauthorstudentid{#1}}
 
 \def\wutsupervisorChinesename{}
 \def\wutsupervisorEnglishname{}
@@ -139,6 +141,9 @@
 \def\wutmajorChinesename{}
 \def\wutmajorEnglishname{}
 \newcommand{\WUTmajor}[2]{\def\wutmajorChinesename{#1} \def\wutmajorEnglishname{#2}}
+\def\wutresearchdirection{}
+\newcommand{\WUTresearchdirection}[1]{\def\wutresearchdirection{#1}}
+
 
 \def\wutinstitute{}
 \def\wutinstituteEnglish{}
@@ -281,59 +286,61 @@
 \newcommand{\WUTmakesecondcover}{
     \begin{titlepage}
         \begin{center}
+        \vspace{0.5\baselineskip}
             \begin{minipage}[t][20mm][t]{60mm}
-                {\kaishu\zihao{4} 分类号} \uline{\makebox[30mm]{\wutclassificationnumber}} \\
-                UDC \uline{\makebox[36mm]{\wutUDC}}
+                {\kaishu\zihao{4} 中图分类号} \CJKunderline{\makebox[30mm]{\wutclassificationnumber}} \\
+                UDC分类号 \CJKunderline{\makebox[32mm]{\wutUDC}}
             \end{minipage}
             \hfill
             \begin{minipage}[t][20mm][t]{60mm}
-                {\kaishu\zihao{4} 密\hspace{9mm}级} \uline{\makebox[30mm]{\wutconfidentiality}} \\
-                {\kaishu\zihao{4} 学校代码} \uline{\makebox[30mm]{\wutuniversitycode}}
+                {\kaishu\zihao{4} 学校代码} \uline{\makebox[30mm]{\wutuniversitycode}}\\
+                {\kaishu\zihao{4} 密\hspace{9mm}级} \uline{\makebox[30mm]{\wutconfidentiality}} 
             \end{minipage} \\
             \vspace{5mm}
             \begin{center}
                 \resizebox{0.6\hsize}{!}{\includegraphics{WUT.jpg}} \\
-                \vspace{5mm}
-                {\zihao{1}\STZhongsong \makebox[60mm][s]{学位论文}}
+                \vspace{0.5\baselineskip}
+                {\zihao{1}\bfseries\STZhongsong \makebox[60mm][s]{硕士学位论文}}
             \end{center}
             \vspace{5mm}
             \begin{spacing}{1.5}
                 \zihao{4}\STZhongsong
-                \noindent 题目 \uline{\makebox[136mm]{\kaishu\wutChinesetitle}} \\
-                \noindent\begin{minipage}[c][20mm][c]{10mm}
+                \noindent 题\hspace{2em}目 \uline{\makebox[126mm]{\kaishu\wutChinesetitle}} \\
+                \noindent\begin{minipage}[c][20mm][c]{20mm}
                     \vspace{5mm}
                     \begin{spacing}{1.0}
                         \zihao{4}
-                        英文 \\
-                        题目
+                        英文题目
                     \end{spacing}
                 \end{minipage}
-                \begin{minipage}[c][20mm][c]{136mm}
+                \begin{minipage}[c][20mm][c]{126mm}
                     \vspace{5mm}
                     \begin{spacing}{1.0}
-                        \makebox[136mm]{\wutEnglishtitlefirstline} \\
-                        \uline{\makebox[136mm]{\wutEnglishtitlesecondline}}
+                        \makebox[126mm]{\wutEnglishtitlefirstline} \\
+                        \uline{\makebox[126mm]{\wutEnglishtitlesecondline}}
                     \end{spacing}
                 \end{minipage} \\
-                \noindent 论文作者 \uline{\makebox[126mm]{\kaishu\wutauthorChinesename}} \\
+                \zihao{4}\STZhongsong
+                \noindent 论文作者 \uline{\makebox[46mm]{\kaishu\wutauthorChinesename}} 
+                学号 \uline{\makebox[68mm]{\kaishu\wutauthorstudentid}}\\
                 \noindent\begin{minipage}[c][19mm][c]{25mm}
                     指导教师
                 \end{minipage}
                 \begin{minipage}[c][19mm][c]{121mm}
-                    姓名 \uline{\makebox[45mm]{\kaishu\wutsupervisorChinesename}} 职称 \uline{\makebox[20mm]{\kaishu\wutsupervisortitle}} 学位 \uline{\makebox[20mm]{\kaishu\wutsupervisordegree}} \\
-                    单位名称 \uline{\makebox[68mm]{\kaishu\wutsupervisororganization}} 邮编 \uline{\makebox[20mm]{\kaishu\wutsupervisorzipcode}}
+                    姓名 \uline{\makebox[30mm]{\kaishu\wutsupervisorChinesename}} 职称 \uline{\makebox[35mm]{\kaishu\wutsupervisortitle}} 学位 \uline{\makebox[20mm]{\kaishu\wutsupervisordegree}} \\
+                    单位 \uline{\makebox[78mm]{\kaishu\wutsupervisororganization}} 邮编 \uline{\makebox[20mm]{\kaishu\wutsupervisorzipcode}}
                 \end{minipage} \\
                 \ifthenelse{\equal{\wutvicesupervisorswitch}{on}}{
                     \vspace{-2mm}\begin{minipage}[c][19mm][c]{25mm}
                         副指导教师
                     \end{minipage}
                     \begin{minipage}[c][19mm][c]{121mm}
-                        姓名 \uline{\makebox[45mm]{\kaishu\wutvicesupervisorname}} 职称 \uline{\makebox[20mm]{\kaishu\wutvicesupervisortitle}} 学位 \uline{\makebox[20mm]{\kaishu\wutvicesupervisordegree}} \\
-                        单位名称 \uline{\makebox[68mm]{\kaishu\wutvicesupervisororganization}} 邮编 \uline{\makebox[20mm]{\kaishu\wutvicesupervisorzipcode}}
+                        姓名 \uline{\makebox[30mm]{\kaishu\wutvicesupervisorname}} 职称 \uline{\makebox[35mm]{\kaishu\wutvicesupervisortitle}} 学位 \uline{\makebox[20mm]{\kaishu\wutvicesupervisordegree}} \\
+                        单位 \uline{\makebox[78mm]{\kaishu\wutvicesupervisororganization}} 邮编 \uline{\makebox[20mm]{\kaishu\wutvicesupervisorzipcode}}
                     \end{minipage} \\}{}
-                \noindent 申请学位级别 \uline{\makebox[42mm]{\kaishu \wutChinesedegree}} 学科专业名称 \uline{\makebox[42mm]{\kaishu\wutmajorChinesename}} \\
+                \noindent  学科专业名称 \uline{\makebox[42mm]{\kaishu\wutmajorChinesename}} 研究方向\hspace{2em} \uline{\makebox[42mm]{\kaishu\wutresearchdirection}}\\
                 \noindent 论文提交日期 \uline{\makebox[42mm]{\kaishu\wutdateofthesissubmission}} 论文答辩日期 \uline{\makebox[42mm]{\kaishu\wutdateofthesisdefense}} \\
-                \noindent 学位授予单位 \uline{\makebox[42mm]{\kaishu\wutdegreeorganization}} 学位授予日期 \uline{\makebox[42mm]{\kaishu\wutdateofdegreeaward}} \\
+                \noindent 培养单位\hspace{2em} \uline{\makebox[42mm]{\kaishu\wutdegreeorganization}} 学位授予日期 \uline{\makebox[42mm]{\kaishu\wutdateofdegreeaward}} \\
                 \noindent 答辩委员会主席 \uline{\makebox[42mm]{\kaishu\wutcommitteechairman}} 评阅人 \uline{\makebox[52mm]{\kaishu\wutfirstreviewer}} \\
                 \noindent 答辩委员会委员
                 \begin{minipage}[t][20mm][t]{111mm}
@@ -341,12 +348,13 @@
                     \uline{\makebox[111mm]{\kaishu\wutreviewercomsecond}}
                 \end{minipage}
             \end{spacing}
-            \vspace{20mm}
+            \vspace{10mm}
             \begin{center}
                 {\zihao{3} \STZhongsong \wutdateofthesiscompletion}
             \end{center}
         \end{center}
     \end{titlepage}}
+
 
 
 
