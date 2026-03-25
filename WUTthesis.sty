@@ -175,12 +175,14 @@
 
 
 
-\newenvironment{WUTChineseabstract}[1]{\chapter*{\heiti\zihao{-3} 摘要}\addcontentsline{toc}{chapter}{摘要}}{\par} %% 中文摘要环境定义，正文中“摘要”二字设置为黑体，字号小三
+\newenvironment{WUTChineseabstract}[1]{\chapter*{\heiti\zihao{-3} \wutChinesetitle}\addcontentsline{toc}{chapter}{摘要}\noindent\textbf{摘要：}}{\par} %% 中文摘要环境定义，正文中“摘要”二字设置为黑体，字号小三
 
 \newenvironment{WUTEnglishabstract}[1]{%
-    \chapter*{\zihao{-3}Abstract}
-    \addcontentsline{toc}{chapter}{Abstract}%
-    \wuttimes
+    \chapter*{\zihao{-3} \wutEnglishtitlefirstline \wutEnglishtitlesecondline}% 顶部改为英文标题
+
+    \addcontentsline{toc}{chapter}{Abstract}% 目录显示英文标题
+    \wuttimes % 切换为Times字体
+    \noindent\textbf{Abstract:}% 段首不缩进，加粗“Abstract:”
 }{\par}
 
 

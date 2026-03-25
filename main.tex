@@ -4,7 +4,7 @@
 \usepackage[usenames, dvipsnames]{xcolor} %% 颜色宏包
 \usepackage{setspace} %% 调整行距的宏包
 \usepackage{graphicx} %% 和插图相关的宏包
-\usepackage{float} 
+\usepackage{float}
 \usepackage{xeCJKfntef}%%导入下划线%%原代码\WUTmakesecondcover报错
 \usepackage{ifthen}%判断语句
 \usepackage[colorlinks,linkcolor=black,anchorcolor=blue,citecolor=black,urlcolor=blue]{hyperref}  %设置超链接及其颜色，不想要参考文献引用有颜色的从这里修改
@@ -24,7 +24,7 @@
 \renewcommand{\algorithmcfname}{算法}
 % \usepackage[fontset=none]{ctex}
 \captionsetup[table]{labelsep=space} % 引用表时冒号改为空格
-\captionsetup[figure]{labelsep=space} % 图  
+\captionsetup[figure]{labelsep=space} % 图
 % \usepackage{algorithm}
 \usepackage{algorithmic}
 % \usepackage{booktabs}
@@ -37,17 +37,58 @@
 
 \renewcommand{\bibfont}{\zihao{5}} %% 设置参考文献字号五号
 
+\makeatletter                 %为正文前页面设置为大写
+\renewcommand{\frontmatter}{%
+  \cleardoublepage
+  \@mainmatterfalse
+  \pagenumbering{Roman} % 大写罗马数字，替代默认的roman(小写)
+}
+\makeatother
+
+\renewcommand{\contentsname}{目次} % 将目录名称改为"目次"
+
+% 为目次添加引导线（.......）
+\makeatletter
+% 章节(Chapter)的目录项格式
+\renewcommand{\l@chapter}[2]{%
+  \ifnum \c@tocdepth >\m@ne
+    \addpenalty{-\@highpenalty}%
+    \vskip 1.0em \@plus\p@
+    \setlength\@tempdima{1.5em}%
+    \begingroup
+      \parindent \z@ \rightskip \@pnumwidth
+      \parfillskip -\@pnumwidth
+      \leavevmode
+      \heiti\zihao{-4}
+      \advance\leftskip\@tempdima
+      \hskip -\leftskip
+      #1\nobreak\leaders\hbox{$\mkern \@dotsep mu\zihao{-5}\hbox{.}\mkern \@dotsep mu$}\hfill % 添加引导线
+      \nobreak\hb@xt@\@pnumwidth{\hss #2}\par
+    \endgroup
+  \fi
+}
+\makeatother
+
+
 \renewcommand{\theequation}{\thechapter-\arabic{equation}} %% 将公式代号中默认的“.”改为“-”
 \renewcommand{\thefigure}{\thechapter-\arabic{figure}} %% 将插图代号中默认的“.”改为“-”
 \renewcommand{\thetable}{\thechapter-\arabic{table}} %% 将表格代号中默认的“.”改为“-”
 \renewcommand{\thealgocf}{\thechapter-\arabic{algocf}} %% 将算法代号中默认的“.”改为“-”
 
-\ctexset{chapter={format+={\zihao{-2}\heiti}, number={\arabic{chapter}}, beforeskip={6pt},afterskip={30pt},pagestyle={fancy},fixskip=true}} %% 设置章标题为字号小二，黑体，阿拉伯数字，章节标题段前6磅，段后30pt
-\CTEXsetup[format={\bfseries\raggedright}]{section}%%section标题左对齐
+\ctexset{chapter={format+={\zihao{-2}\heiti\raggedright}, number={\arabic{chapter}}, name={}, beforeskip={6pt},afterskip={30pt},pagestyle={fancy},fixskip=true}} %% 设置章标题为字号小二，黑体，阿拉伯数字，章节标题段前6磅，段后30pt
+\CTEXsetup[format={\raggedright}]{section}%%section标题左对齐
 \ctexset{section={format+={\zihao{3}\heiti},beforeskip={6pt}, afterskip={18pt}}} %% 设置节标题为字号三号，黑体，阿拉伯数字，章节标题段前6磅，段后18磅
+\CTEXsetup[format={\raggedright}]{subsection}
 \ctexset{subsection={format+={\zihao{4}\heiti},beforeskip={3pt},afterskip={12pt}}} %% 设置二级节标题为字号四号，黑体，阿拉伯数字，章节标题段前3pt，段后12pt
 %\ctexset{subsubsection={format+={\zihao{-4}\heiti}, afterskip={7pt}}} %% 设置三级节标题为字号小四号，黑体，阿拉伯数字，章节标题与后面下方之间的距离为7pt
 %\ctexset{paragraph/afterskip={6pt}}
+
+\let\oldtableofcontents\tableofcontents    % 目录标题格式定制：居中、黑体小三（临时切换，不影响正文）
+\renewcommand{\tableofcontents}{%
+  \CTEXsetup[format={\centering\zihao{-3}\heiti}]{chapter}%
+  \oldtableofcontents
+  \CTEXsetup[format={\zihao{-2}\heiti\raggedright}]{chapter}%
+}
 
 \addbibresource{biber.bib} %% 加入参考文献书库库文件
 
@@ -69,6 +110,7 @@
 
 
 \tableofcontents %目录
+\addcontentsline{toc}{chapter}{目次}
 % 插图目录，如不需要，删去
 {%
 \let\oldnumberline\numberline%

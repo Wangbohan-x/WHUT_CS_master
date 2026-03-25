@@ -1,3 +1,4 @@
+\CTEXsetup[format={\centering\zihao{-3}\heiti}]{chapter}
 \begin{WUTChineseabstract}
 
 %\sloppy
@@ -6,10 +7,12 @@
 模板使用方式：下载TexLive或者MikTex + VSCode(LatexWorkshop插件)，然后下载本模板，打开main.tex进行编辑即可。本模板自带settings.json文件，可自行调整。
 \end{WUTChineseabstract}
 \WUTChinesekeywords{武汉理工大学，研究生，论文，{\LaTeX}模型}
-
+\let\oldaddcontentsline\addcontentsline
+\renewcommand{\addcontentsline}[3]{}
 \begin{WUTEnglishabstract}
 English Abstract
 \end{WUTEnglishabstract}
+\let\addcontentsline\oldaddcontentsline
 \WUTEnglishkeywords{Wuhan University of Technology, Postgraduates, Thesis, {\LaTeX} Template}
 
 
